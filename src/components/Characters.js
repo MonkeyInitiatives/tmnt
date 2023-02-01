@@ -9,7 +9,7 @@ function Characters() {
   const originalData = [
     {
       name: "Leonardo",
-      image: "../images/leo.webp",
+      image: "./images/leo.webp",
       description: "Leads.",
       id: "1",
       turtle: true,
@@ -19,7 +19,7 @@ function Characters() {
     },
     {
       name: "Donatello",
-      image: "../images/dono.webp",
+      image: "./images/dono.webp",
       description: "Does machines.",
       id: "2",
       turtle: true,
@@ -29,7 +29,7 @@ function Characters() {
     },
     {
       name: "Raphael",
-      image: "../images/raph.webp",
+      image: "./images/raph.webp",
       description: "Cool, but rude.",
       id: "3",
       turtle: true,
@@ -39,7 +39,7 @@ function Characters() {
     },
     {
       name: "Michelangelo",
-      image: "../images/mike.webp",
+      image: "./images/mike.webp",
       description: "Party dude.",
       id: "4",
       turtle: true,
@@ -49,7 +49,7 @@ function Characters() {
     },
     {
       name: "Shredder",
-      image: "../images/shredder.webp",
+      image: "./images/shredder.webp",
       description: "The Shred Head.",
       id: "5",
       turtle: false,
@@ -59,7 +59,7 @@ function Characters() {
     },
     {
       name: "April",
-      image: "../images/april.webp",
+      image: "./images/april.webp",
       description: "Reporter.",
       id: "6",
       turtle: false,
@@ -69,7 +69,7 @@ function Characters() {
     },
     {
       name: "Casey Jones",
-      image: "../images/casey.webp",
+      image: "./images/casey.webp",
       description: "Slap shot.",
       id: "7",
       turtle: false,
@@ -79,7 +79,7 @@ function Characters() {
     },
     {
       name: "Splinter",
-      image: "../images/splinter.webp",
+      image: "./images/splinter.webp",
       description: "He made a funny.",
       id: "8",
       turtle: false,
@@ -89,7 +89,7 @@ function Characters() {
     },
     {
       name: "Krang",
-      image: "../images/krang.webp",
+      image: "./images/krang.webp",
       description: "Big brain.",
       id: "9",
       turtle: false,
@@ -99,7 +99,7 @@ function Characters() {
     },
     {
       name: "Baxter Stockman",
-      image: "../images/baxter.webp",
+      image: "./images/baxter.webp",
       description: "Pretty fly (for a science guy).",
       id: "10",
       turtle: false,
@@ -109,7 +109,7 @@ function Characters() {
     },
     {
       name: "Slash",
-      image: "../images/slash.webp",
+      image: "./images/slash.webp",
       description: "(I don't know who this is...).",
       id: "11",
       turtle: true,
@@ -119,7 +119,7 @@ function Characters() {
     },
     {
       name: "Tokka",
-      image: "../images/tokka.webp",
+      image: "./images/tokka.webp",
       description: "Yo, it's the green machine.",
       id: "12",
       turtle: true,
@@ -129,7 +129,7 @@ function Characters() {
     },
     {
       name: "Rahzar",
-      image: "../images/rahzar.webp",
+      image: "./images/rahzar.webp",
       description: "Gonna rock the town without being seen.",
       id: "13",
       turtle: false,

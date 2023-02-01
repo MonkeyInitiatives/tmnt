@@ -6,6 +6,7 @@ import Footer from "./Footer";
 function Characters() {
 
   // My data of Ninja Turtle characters presented as an array of objects. 
+  // Eventually this will get replaced with CRUD to our/3rd apis. 
   const originalData = [
     {
       name: "Leonardo",
@@ -138,8 +139,8 @@ function Characters() {
       villain: true
     }]
 
-  // This is where we define our original state called filtered and our setFilter which
-  // will update filtered when called. We also define the initial state of filtered
+  // This is where we define our original state called filteredData and our setFilter which
+  // will update filteredData when called. We also define the initial state of filteredData
   // with our originalData. 
   const [filteredData, setFilter] = useState(originalData);
   // Default title of our site will be "Tom's Awesome Ninja Turtle Site!" (because the site is awesome!)
@@ -149,7 +150,7 @@ function Characters() {
     document.title = `${title}`;
   });
 
-  // A very simple set State to decide if a video should be shown or not.
+  // A very simple set State to decide if a video should be shown or not via CSS.
   const [showVideo, setShowVideo] = useState("hidden");
 
   // Function that decides to show a video when clicked
@@ -165,7 +166,7 @@ function Characters() {
     const myFilter = originalData.filter(character => {
       // If the search box is empty, just return all the characters.
       if (e.target.value === "") return originalData
-      // We only return the character if the name includes what is being typed
+      // We only return the character if the name includes what is being typed.
       return character.name.toLowerCase().includes(e.target.value.toLowerCase())
     })
     // This is where we set the state of our new filtered data.
@@ -179,13 +180,13 @@ function Characters() {
   // At the end, we set the new myFilter filtered data to the 
   // filter state so only the correct characters render on the page.
   const handleCheckboxChange = (e) => {
-    // First, we get all the checkboxes
+    // First, we get all the checkboxes.
     const checkboxOptions = document.querySelectorAll(".form-check-input");
-    // Second, we set up a dummy object that is going to contain our filter options
+    // Second, we set up a dummy object that is going to contain our filter options.
     let checkboxFilter = {};
     // A string that will be our new title.
     let newTitle = "";
-    // This for-loop goes through each check box (all four of them)
+    // This for-loop goes through each check box (all four of them).
     for (let i = 0; i < checkboxOptions.length; i++) {
       // Here we start to create the checkboxFilter object. Notice the [] being used.
       // This allows us to dynamically give the key names in the object. Also note
@@ -237,15 +238,15 @@ function Characters() {
       {/* Notice that I made a searchbar component. Now if I want to use it in other pages all my code is centralized! */}
       {/* Also notice I am passing my two functions as props. This will allow the Searchbar to filter the data in that component */}
       <Searchbar handleCheckboxChange={handleCheckboxChange} handleSearchboxChange={handleSearchboxChange} />
-      {/* Here is where we render each card. Notice a few things. First, it is mapping through the filtered data and not
-        the originalData. That's because we set the filtered data as originalData initially with state, and because we want only 
+      {/* Here is where we render each card. Notice a few things. First, it is mapping through the filteredData and not
+        the originalData. That's because we set the filteredData as originalData initially with state, and because we want only 
         our filtered results to appear. This is how we can use JSX expressions to do neat things in react! */}
       {(filteredData.map(character => {
         return (
           // This is using bootstrap's row/col layout to make the page look pretty and responsive. 
           <div className="col-sm align-items-stretch" key={character.id}>
             {/* Here we send each character information to the card component so we can display their info. */}
-            {/* Notice that I am sending them as props with the keys called name, image, and description */}
+            {/* Notice that I am sending them as props with the keys called name, image, and description. */}
             <Card name={character.name} image={character.image} description={character.description} />
           </div>
         )

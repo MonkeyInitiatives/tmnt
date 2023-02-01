@@ -3,6 +3,7 @@ import React from 'react';
 // But be mindful of your relative pathing!
 import './CharacterCard.style.css';
 // Our Card component that is taking in props we sent from the Characters component. 
+// You can destructure them if you want. I did not!
 function Card(props) {
     return (
         <div>

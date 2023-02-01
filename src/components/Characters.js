@@ -141,7 +141,7 @@ function Characters() {
   // This is where we define our original state called filtered and our setFilter which
   // will update filtered when called. We also define the initial state of filtered
   // with our originalData. 
-  const [filtered, setFilter] = useState(originalData);
+  const [filteredData, setFilter] = useState(originalData);
   // Default title of our site will be "Tom's Awesome Ninja Turtle Site!" (because the site is awesome!)
   const [title, setTitle] = useState("Tom's Awesome Ninja Turtle Site!");
   // A simple hook that updates the title of our site based on the filtering.
@@ -240,7 +240,7 @@ function Characters() {
       {/* Here is where we render each card. Notice a few things. First, it is mapping through the filtered data and not
         the originalData. That's because we set the filtered data as originalData initially with state, and because we want only 
         our filtered results to appear. This is how we can use JSX expressions to do neat things in react! */}
-      {(filtered.map(character => {
+      {(filteredData.map(character => {
         return (
           // This is using bootstrap's row/col layout to make the page look pretty and responsive. 
           <div className="col-sm align-items-stretch" key={character.id}>

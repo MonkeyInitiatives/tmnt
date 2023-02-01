@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Card from "./CharacterCard";
 import Searchbar from "./Searchbar";
-// import Modal from "./Modal";
+import Modal from "./Modal";
 import Footer from "./Footer";
 function Characters() {
 
@@ -150,12 +150,12 @@ function Characters() {
   });
 
   // A very simple set State to decide if a video should be shown or not.
-  // const [showVideo, setShowVideo] = useState("hidden");
+  const [showVideo, setShowVideo] = useState("hidden");
 
   // Function that decides to show a video when clicked
-  // const handleShowVideo = () => {
-  //   setShowVideo("visible")
-  // }
+  const handleShowVideo = () => {
+    setShowVideo("visible")
+  }
 
   // A function (that will get passed as a prop to the Searchbar component)
   // that filters my originalData array based on what is being typed in the
@@ -231,8 +231,8 @@ function Characters() {
     <div className="row">
       {/* This is a very silly Modal that displays a video when the DO NOT PUSH button is pressed */}
       <div className="col-sm" align="center">
-        {/* <Modal visibility={showVideo} /> */}
-        {/* <button className='btn btn-danger' onClick={handleShowVideo}>DO NOT PUSH</button> */}
+        <Modal visibility={showVideo} />
+        <button className='btn btn-danger' onClick={handleShowVideo}>DO NOT PUSH</button>
       </div>
       {/* Notice that I made a searchbar component. Now if I want to use it in other pages all my code is centralized! */}
       {/* Also notice I am passing my two functions as props. This will allow the Searchbar to filter the data in that component */}

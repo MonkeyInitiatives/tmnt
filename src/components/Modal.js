@@ -8,7 +8,7 @@ function Modal(props) {
     return (
         <div>
             <iframe title="Ninja Rap" width={iframeWidth} height={iframeHeight} style={{visibility: `${props.visibility}`}}
-                src="https://www.youtube.com/embed/R_K6971WmAs">
+                src="https://youtu.be/R_K6971WmAs?t=27">
             </iframe>
         </div>
     );

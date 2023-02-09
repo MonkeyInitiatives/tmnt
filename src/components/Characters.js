@@ -155,7 +155,12 @@ function Characters() {
 
   // Function that decides to show a video when clicked
   const handleShowVideo = () => {
-    setShowVideo("visible")
+    if(showVideo==="hidden"){
+      setShowVideo("visible")
+    }
+    else{
+      setShowVideo("hidden");
+    }
   }
 
   // A function (that will get passed as a prop to the Searchbar component)

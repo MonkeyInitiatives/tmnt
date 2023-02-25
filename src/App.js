@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Characters from "./components/Characters";
 import CharacterProfile from "./components/CharacterProfile";
 import LureTestPage from "./components/LureTestPage";
+import CardFlip from "./components/CardFlip"
 import NavBar from "./components/NavBar";
 function App() {
   //Because I am keeping track of the currentPage state, I need to set up state, 
@@ -18,6 +19,9 @@ function App() {
     }
     if (currentPage === 'Lure') {
       return <LureTestPage />;
+    }
+    if (currentPage === 'Cards') {
+      return <CardFlip />;
     }
     // Render Characters component as default.
     return <Characters />;

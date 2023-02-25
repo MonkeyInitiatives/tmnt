@@ -117,48 +117,45 @@ function Characters() {
         }
       }
     }
-    for (let i = 0; i < checkboxFilter.length; i++) {
-      console.log(`step` + i)
-      if (checkboxFilter[0] === true) {
-        console.log(true)
-      }
-      else {
-        console.log(false)
-      }
-    }
-    //Begin the nightmare filter@
+    
+    //Begin the nightmare filter!
     const myFilter = originalData.filter(function (character) {
-      //keep track of number of times a character passes the filter
+      //keep track of number of times a character passes the filter. This will be used to compare against the number of boxes checked at the end.
       let counter = 0;
-      // For each section "Style" or "Mood"
+      // For loop for each section "Style" or "Mood" or "Pizza"
       for (let key in checkboxFilter) {
-        console.log(checkboxFilter[key]) // array in Style section containing careful and wild
-        // for each element in the the style array... 
+        console.log(checkboxFilter[key]) // array in Style section containing careful and wild objects
+        // for loop for each element in the the style array (i.e. those careful and wild objects) 
         for (let index = 0; index < checkboxFilter[key].length; index++) {
           // getting our values and testing them
-          let testing = checkboxFilter[key][index]
-          console.log("What box was clicked? " + testing[character[key]])
-          let isTheBoxChecked = testing[character[key]] === true
+          let boxClicked = checkboxFilter[key][index]
+          console.log("What box was clicked? " + boxClicked[character[key]])
+          let isTheBoxChecked = boxClicked[character[key]] === true
           console.log(isTheBoxChecked)
-          console.log("What values are being compared? " + character[key] + " " + Object.keys(testing)[0])
-          let doTheValuesMatch = character[key] == Object.keys(testing)[0]
+          // character[key] is the careful or wild key in the character data array.
+          // Object.keys(boxClicked)[0] is the the key from the box that was clicked
+          console.log("What values are being compared? " + character[key] + " " + Object.keys(boxClicked)[0])
+          let doTheValuesMatch = character[key] == Object.keys(boxClicked)[0]
+          // boolean saying true/false if the two keys match
           console.log(doTheValuesMatch)
-          let cantBeUndefined = testing[character[key]] == null
+          let cantBeUndefined = boxClicked[character[key]] == null
           console.log("is the value undefined? " + cantBeUndefined)
+          // We need to know if the box was not clicked. If it isn't it is undefined
           console.log(cantBeUndefined)
           // If statement that only increases the counter if a character passes each filter test
           if (!cantBeUndefined && isTheBoxChecked && doTheValuesMatch) {
             console.log("This character passes: " + character.name)
+            // increase the counter for our comparison at the end
             counter++;
           }
         }
       }
       let numberChecked = 0;
-      // These nested for loops go and checks if a box is true or false.
-      // The first loop for the Style and Mood sections
+      // These nested for loops go and checks if a box is true or false. Similar to the above section, we need to do a loop in a loop. 
+      // The first loop for the Style and Mood and Food sections
       for (let current in checkboxFilter) {
         let option1 = checkboxFilter[current]
-        // This loop then goes for each part in Style or Mood (i.e. careful, wild, happy, sad)
+        // This loop then goes for each part in Style or Mood or Food (i.e. careful, wild, happy, sad, etc)
         for (let index = 0; index < option1.length; index++) {
           const element = option1[index];
           console.log(Object.values(element)[0])
@@ -169,6 +166,7 @@ function Characters() {
         }
       }
       // If the number of boxes checked match the number of passes a character had, return the character as having passed the filter.
+      // This is absolutely not best practices, but it works so oh well! 
       if (numberChecked === counter) {
         return character;
       }

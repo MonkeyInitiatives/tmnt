@@ -20,6 +20,9 @@ function NavBar(props) {
                     <li className="nav-item">
                         <a className="nav-link" href="#tom" onClick={() => props.handlePageChange('Tom')}>Tom</a>
                     </li>
+                    <li className="nav-item">
+                        <a className="nav-link" href="#lures" onClick={() => props.handlePageChange('Lure')}>Lures</a>
+                    </li>
                 </ul>
             </div>
         </nav>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Card from "./CharacterCard";
 import Searchbar from "./Searchbar";
-import Modal from "./Modal";
+// import Modal from "./Modal";
 import Footer from "./Footer";
 function Characters() {
 
@@ -16,7 +16,9 @@ function Characters() {
       turtle: true,
       human: false,
       hero: true,
-      villain: false
+      style: "careful",
+      mood: "sad",
+      food: "chinese"
     },
     {
       name: "Donatello",
@@ -26,7 +28,9 @@ function Characters() {
       turtle: true,
       human: false,
       hero: true,
-      villain: false
+      style: "careful",
+      mood: "happy",
+      food: "tofu"
     },
     {
       name: "Raphael",
@@ -36,7 +40,9 @@ function Characters() {
       turtle: true,
       human: false,
       hero: true,
-      villain: false
+      style: "wild",
+      mood: "sad",
+      food: "tacos"
     },
     {
       name: "Michelangelo",
@@ -46,97 +52,9 @@ function Characters() {
       turtle: true,
       human: false,
       hero: true,
-      villain: false
-    },
-    {
-      name: "Shredder",
-      image: "./images/shredder.webp",
-      description: "The Shred Head.",
-      id: "5",
-      turtle: false,
-      human: true,
-      hero: false,
-      villain: true
-    },
-    {
-      name: "April",
-      image: "./images/april.webp",
-      description: "Reporter.",
-      id: "6",
-      turtle: false,
-      human: true,
-      hero: true,
-      villain: false
-    },
-    {
-      name: "Casey Jones",
-      image: "./images/casey.webp",
-      description: "Slap shot.",
-      id: "7",
-      turtle: false,
-      human: true,
-      hero: true,
-      villain: false
-    },
-    {
-      name: "Splinter",
-      image: "./images/splinter.webp",
-      description: "He made a funny.",
-      id: "8",
-      turtle: false,
-      human: false,
-      hero: true,
-      villain: false
-    },
-    {
-      name: "Krang",
-      image: "./images/krang.webp",
-      description: "Big brain.",
-      id: "9",
-      turtle: false,
-      human: false,
-      hero: false,
-      villain: true
-    },
-    {
-      name: "Baxter Stockman",
-      image: "./images/baxter.webp",
-      description: "Pretty fly (for a science guy).",
-      id: "10",
-      turtle: false,
-      human: true,
-      hero: false,
-      villain: true
-    },
-    {
-      name: "Slash",
-      image: "./images/slash.webp",
-      description: "(I don't know who this is...).",
-      id: "11",
-      turtle: true,
-      human: false,
-      hero: false,
-      villain: true
-    },
-    {
-      name: "Tokka",
-      image: "./images/tokka.webp",
-      description: "Yo, it's the green machine.",
-      id: "12",
-      turtle: true,
-      human: false,
-      hero: false,
-      villain: true
-    },
-    {
-      name: "Rahzar",
-      image: "./images/rahzar.webp",
-      description: "Gonna rock the town without being seen.",
-      id: "13",
-      turtle: false,
-      human: false,
-      hero: false,
-      villain: true
+      style: "wild",
+      mood: "happy",
+      food: "pizza"
     }]
 
   // This is where we define our original state called filteredData and our setFilter which
@@ -155,10 +73,10 @@ function Characters() {
 
   // Function that decides to show a video when clicked
   const handleShowVideo = () => {
-    if(showVideo==="hidden"){
+    if (showVideo === "hidden") {
       setShowVideo("visible")
     }
-    else{
+    else {
       setShowVideo("hidden");
     }
   }
@@ -180,69 +98,98 @@ function Characters() {
     setTitle(`Teenage Mutant Ninja ${e.target.value}`);
   }
 
-  // A function (that will get passed as a prop to the Searchbar component)
-  // that filters my originalData array based on what checkboxes are marked.
-  // At the end, we set the new myFilter filtered data to the 
-  // filter state so only the correct characters render on the page.
-  const handleCheckboxChange = (e) => {
-    // First, we get all the checkboxes.
+  // New checkbox function for multiple filtering
+  const handleCheckboxChangeNEW = (e) => {
+    // Get all the checkboxes
     const checkboxOptions = document.querySelectorAll(".form-check-input");
-    // Second, we set up a dummy object that is going to contain our filter options.
     let checkboxFilter = {};
-    // A string that will be our new title.
-    let newTitle = "";
-    // This for-loop goes through each check box (all four of them).
+    // Create the object filter as before.
     for (let i = 0; i < checkboxOptions.length; i++) {
-      // Here we start to create the checkboxFilter object. Notice the [] being used.
-      // This allows us to dynamically give the key names in the object. Also note
-      // that .nextSibling.innerHTML is being used. This is because we want the keys
-      // to be the text next to each checkbox ("Turtle", "Human", etc)
-      checkboxFilter[checkboxOptions[i].nextSibling.innerHTML.toLowerCase()] = checkboxOptions[i].checked;
-      // If a box is checked, add that value to the newTitle we will use a hook to update.
-      if (checkboxOptions[i].checked) {
-        newTitle += `${checkboxOptions[i].nextSibling.innerHTML}s `
-      }
-    }
-    // an example of what checkboxFilter will look like if Turtle and Hero are checked
-    // {
-    //   turtle: true,
-    //   human: false,
-    //   hero: true,
-    //   villain: false
-    // }
-
-    // This is the start of our filter.
-    const myFilter = originalData.filter(function (character) {
-      // Because we want to filter based on all the checkboxes marked, we have
-      // a for-in loop to go through each option in our checkboxFilter object.
-      for (let key in checkboxFilter) {
-        // If the character doesn't match our filter (i.e. a character isn't a hero
-        // but we checked for only heroes to be returned) then we return false
-        // because that character does not match the criteria.
-        if (character[key] !== checkboxFilter[key] && checkboxFilter[key] !== false) {
-          return false;
+      const classList = checkboxOptions[i].classList;
+      const myCategory = classList[classList.length - 1];
+      if (checkboxOptions[i].classList.length > 1) {
+        if (!checkboxFilter[myCategory.toLowerCase()]) {
+          checkboxFilter[myCategory.toLowerCase()] = [];
+          checkboxFilter[myCategory.toLowerCase()].push({ [checkboxOptions[i].nextSibling.innerHTML.toLowerCase()]: checkboxOptions[i].checked });
+        }
+        else {
+          checkboxFilter[myCategory.toLowerCase()].push({ [checkboxOptions[i].nextSibling.innerHTML.toLowerCase()]: checkboxOptions[i].checked });
         }
       }
-      // If we made it to the end without hitting that return false, that means the character
-      // matches the checkboxes we marked, so we can return the character to the myFilter array.
-      return character;
+    }
+    for (let i = 0; i < checkboxFilter.length; i++) {
+      console.log(`step` + i)
+      if (checkboxFilter[0] === true) {
+        console.log(true)
+      }
+      else {
+        console.log(false)
+      }
+    }
+    //Begin the nightmare filter@
+    const myFilter = originalData.filter(function (character) {
+      //keep track of number of times a character passes the filter
+      let counter = 0;
+      // For each section "Style" or "Mood"
+      for (let key in checkboxFilter) {
+        console.log(checkboxFilter[key]) // array in Style section containing careful and wild
+        // for each element in the the style array... 
+        for (let index = 0; index < checkboxFilter[key].length; index++) {
+          // getting our values and testing them
+          let testing = checkboxFilter[key][index]
+          console.log("What box was clicked? " + testing[character[key]])
+          let isTheBoxChecked = testing[character[key]] === true
+          console.log(isTheBoxChecked)
+          console.log("What values are being compared? " + character[key] + " " + Object.keys(testing)[0])
+          let doTheValuesMatch = character[key] == Object.keys(testing)[0]
+          console.log(doTheValuesMatch)
+          let cantBeUndefined = testing[character[key]] == null
+          console.log("is the value undefined? " + cantBeUndefined)
+          console.log(cantBeUndefined)
+          // If statement that only increases the counter if a character passes each filter test
+          if (!cantBeUndefined && isTheBoxChecked && doTheValuesMatch) {
+            console.log("This character passes: " + character.name)
+            counter++;
+          }
+        }
+      }
+      let numberChecked = 0;
+      // These nested for loops go and checks if a box is true or false.
+      // The first loop for the Style and Mood sections
+      for (let current in checkboxFilter) {
+        let option1 = checkboxFilter[current]
+        // This loop then goes for each part in Style or Mood (i.e. careful, wild, happy, sad)
+        for (let index = 0; index < option1.length; index++) {
+          const element = option1[index];
+          console.log(Object.values(element)[0])
+          // If the box was checked, increase the counter. 
+          if (Object.values(element)[0]) {
+            numberChecked++
+          }
+        }
+      }
+      // If the number of boxes checked match the number of passes a character had, return the character as having passed the filter.
+      if (numberChecked === counter) {
+        return character;
+      }
+
     });
-    // This is where we set the state of our new filtered data.
     setFilter(myFilter);
-    // This is where we change the title of our site based on the search.
-    setTitle(`Teenage Mutant Ninja ${newTitle}`);
   }
+
+
+
 
   return (
     <div className="row">
       {/* This is a very silly Modal that displays a video when the DO NOT PUSH button is pressed */}
       <div className="col-sm" align="center">
-        <Modal visibility={showVideo} />
-        <button className='btn btn-danger' onClick={handleShowVideo}>DO NOT PUSH</button>
+        {/* <Modal visibility={showVideo} /> */}
+        {/* <button className='btn btn-danger' onClick={handleShowVideo}>DO NOT PUSH</button> */}
       </div>
       {/* Notice that I made a searchbar component. Now if I want to use it in other pages all my code is centralized! */}
       {/* Also notice I am passing my two functions as props. This will allow the Searchbar to filter the data in that component */}
-      <Searchbar handleCheckboxChange={handleCheckboxChange} handleSearchboxChange={handleSearchboxChange} />
+      <Searchbar handleCheckboxChangNEW={handleCheckboxChangeNEW} handleSearchboxChange={handleSearchboxChange} />
       {/* Here is where we render each card. Notice a few things. First, it is mapping through the filteredData and not
         the originalData. That's because we set the filteredData as originalData initially with state, and because we want only 
         our filtered results to appear. This is how we can use JSX expressions to do neat things in react! */}

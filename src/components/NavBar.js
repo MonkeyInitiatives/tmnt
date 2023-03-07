@@ -19,9 +19,9 @@ function NavBar(props) {
                     <li className="nav-item">
                         <a className="nav-link" href="#charts" onClick={() => props.handlePageChange('Charts')}>Charts</a>
                     </li>
-                    <li className="nav-item">
+                    {/* <li className="nav-item">
                         <a className="nav-link" href="#cards" onClick={() => props.handlePageChange('Cards')}>Cards</a>
-                    </li>
+                    </li> */}
                 </ul>
             </div>
         </nav>

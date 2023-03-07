@@ -2,9 +2,10 @@ import React, { useState } from "react";
 // Importing in my components
 import Characters from "./components/Characters";
 import CharacterProfile from "./components/CharacterProfile";
-import LureTestPage from "./components/LureTestPage";
+import CharacterCharts from "./components/CharacterCharts";
 import CardFlip from "./components/CardFlip"
 import NavBar from "./components/NavBar";
+import Footer from "./components/Footer"
 function App() {
   //Because I am keeping track of the currentPage state, I need to set up state, 
   //the update/setter function, and a default value of state: "Characters"
@@ -17,8 +18,8 @@ function App() {
     if (currentPage === 'Tom') {
       return <CharacterProfile />;
     }
-    if (currentPage === 'Lure') {
-      return <LureTestPage />;
+    if (currentPage === 'Charts') {
+      return <CharacterCharts />;
     }
     if (currentPage === 'Cards') {
       return <CardFlip />;
@@ -29,7 +30,7 @@ function App() {
 
   const handlePageChange = (page) => setCurrentPage(page);
   return (
-    <div className="container">
+    <div className="container" style={{"position":"relative", "minHeight": "100vh"}}>
       {/* Notice down here NavBar appears on every "page". That's because it is in App.js, the file we 
       are currently inside right now! If you want the Footer or the search box to appear on evey page, you'll have to render them here. IMPORTANT! This might necessitate logic changes on the other 
       components, moving functions that handle change here (and then pass them in via props to those 
@@ -38,6 +39,8 @@ function App() {
       {/* This function runs at launch and when teh state changes, so clickick the navbar links 
       will change which component gets rendered right below. */}
       {renderPage()}
+      {/* A nice little footer built off of a bootstrap card, made sticky-bottom */}
+      <Footer/>
     </div>
   )
 }

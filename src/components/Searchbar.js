@@ -10,67 +10,90 @@ function Searchbar(props) {
                 <input className="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"
                     onChange={props.handleSearchboxChange} type="name" />
             </div>
-            <div>
+            <div style={{"display":"flex"}}>
 
                 {/* A new section of check boxes, passing in  handleCheckboxChangNEW from Characters.js to handle the changes*/}
-                {/* Notice that each style has a class that matches its section (Style, Mood, and Food all lowercased and matching the values in the charater info
-                    
-                    
-                    ) */}
-                <p>Style</p>
+                {/* Notice that each style has a class that matches its section (Style, Mood, and Food all lowercased and matching the values in the charater info) */}
+                <h4>Style:</h4>
                 <ul>
-                    <li>
+                    <li style={{"list-style-type": "none"}}>
                         <div className="form-check form-check-inline">
                             <input className="form-check-input style" type="checkbox" id="inlineCheckbox4" onChange={props.handleCheckboxChangNEW} />
                             <label className="form-check-label" htmlFor="inlineCheckbox4">Careful</label>
                         </div>
                     </li>
-                    <li>
+                    <li style={{"list-style-type": "none"}}>
                         <div className="form-check form-check-inline">
                             <input className="form-check-input style" type="checkbox" id="inlineCheckbox4" onChange={props.handleCheckboxChangNEW} />
                             <label className="form-check-label" htmlFor="inlineCheckbox4">Wild</label>
                         </div>
                     </li>
                 </ul>
-                <p>Mood</p>
+                <h4>Mood:</h4>
                 <ul>
-                    <li>
+                    <li style={{"list-style-type": "none"}}>
                         <div className="form-check form-check-inline">
                             <input className="form-check-input mood" type="checkbox" id="inlineCheckbox4" onChange={props.handleCheckboxChangNEW} />
                             <label className="form-check-label" htmlFor="inlineCheckbox4">Happy</label>
                         </div>
                     </li>
-                    <li>
+                    <li style={{"list-style-type": "none"}}>
+                        <div className="form-check form-check-inline">
+                            <input className="form-check-input mood" type="checkbox" id="inlineCheckbox4" onChange={props.handleCheckboxChangNEW} />
+                            <label className="form-check-label" htmlFor="inlineCheckbox4">Angry</label>
+                        </div>
+                    </li>
+                    <li style={{"list-style-type": "none"}}> 
                         <div className="form-check form-check-inline">
                             <input className="form-check-input mood" type="checkbox" id="inlineCheckbox5" onChange={props.handleCheckboxChangNEW} />
                             <label className="form-check-label" htmlFor="inlineCheckbox5">Sad</label>
                         </div>
                     </li>
                 </ul>
-                <p>Food</p>
+                <h4>Food:</h4>
                 <ul>
-                    <li>
+                    <li style={{"list-style-type": "none"}}>
                         <div className="form-check form-check-inline">
                             <input className="form-check-input food" type="checkbox" id="inlineCheckbox4" onChange={props.handleCheckboxChangNEW} />
                             <label className="form-check-label" htmlFor="inlineCheckbox4">Pizza</label>
                         </div>
                     </li>
-                    <li>
+                    <li style={{"list-style-type": "none"}}>
                         <div className="form-check form-check-inline">
                             <input className="form-check-input food" type="checkbox" id="inlineCheckbox5" onChange={props.handleCheckboxChangNEW} />
                             <label className="form-check-label" htmlFor="inlineCheckbox5">Chinese</label>
                         </div>
                     </li>
-                    <li>
+                    <li style={{"list-style-type": "none"}}>
                         <div className="form-check form-check-inline">
                             <input className="form-check-input food" type="checkbox" id="inlineCheckbox5" onChange={props.handleCheckboxChangNEW} />
                             <label className="form-check-label" htmlFor="inlineCheckbox5">Tacos</label>
                         </div>
                     </li>
-                    <li>
+                    <li style={{"list-style-type": "none"}}>
                         <div className="form-check form-check-inline">
                             <input className="form-check-input food" type="checkbox" id="inlineCheckbox5" onChange={props.handleCheckboxChangNEW} />
                             <label className="form-check-label" htmlFor="inlineCheckbox5">Tofu</label>
+                        </div>
+                    </li>
+                </ul>
+                <ul>
+                <li style={{"list-style-type": "none"}}>
+                        <div className="form-check form-check-inline">
+                            <input className="form-check-input food" type="checkbox" id="inlineCheckbox5" onChange={props.handleCheckboxChangNEW} />
+                            <label className="form-check-label" htmlFor="inlineCheckbox5">Sushi</label>
+                        </div>
+                    </li>
+                    <li style={{"list-style-type": "none"}}>
+                        <div className="form-check form-check-inline">
+                            <input className="form-check-input food" type="checkbox" id="inlineCheckbox5" onChange={props.handleCheckboxChangNEW} />
+                            <label className="form-check-label" htmlFor="inlineCheckbox5">Hot Dogs</label>
+                        </div>
+                    </li>
+                    <li style={{"list-style-type": "none"}}>
+                        <div className="form-check form-check-inline">
+                            <input className="form-check-input food" type="checkbox" id="inlineCheckbox5" onChange={props.handleCheckboxChangNEW} />
+                            <label className="form-check-label" htmlFor="inlineCheckbox5">Turtle Soup</label>
                         </div>
                     </li>
                 </ul>

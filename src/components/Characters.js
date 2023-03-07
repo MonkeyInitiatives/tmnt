@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Card from "./CharacterCard";
 import Searchbar from "./Searchbar";
 // import Modal from "./Modal";
-import Footer from "./Footer";
+import { ParallaxContainer } from 'parallax-container';
 function Characters() {
 
   // My data of Ninja Turtle characters presented as an array of objects. 
@@ -55,7 +55,126 @@ function Characters() {
       style: "wild",
       mood: "happy",
       food: "pizza"
-    }]
+    },
+    ,
+    {
+      name: "Shredder",
+      image: "./images/shredder.webp",
+      description: "The Shred Head.",
+      id: "5",
+      turtle: false,
+      human: true,
+      hero: false,
+      villain: true,
+      style: "careful",
+      mood: "angry",
+      food: "turtle soup"
+    },
+    {
+      name: "April",
+      image: "./images/april.webp",
+      description: "Reporter.",
+      id: "6",
+      turtle: false,
+      human: true,
+      hero: true,
+      villain: false,
+      style: "careful",
+      mood: "happy",
+      food: "chinese"
+    },
+    {
+      name: "Casey Jones",
+      image: "./images/casey.webp",
+      description: "Slap shot.",
+      id: "7",
+      turtle: false,
+      human: true,
+      hero: true,
+      villain: false,
+      style: "wild",
+      mood: "angry",
+      food: "hot dogs"
+    },
+    {
+      name: "Splinter",
+      image: "./images/splinter.webp",
+      description: "He made a funny.",
+      id: "8",
+      turtle: false,
+      human: false,
+      hero: true,
+      villain: false,
+      style: "careful",
+      mood: "sad",
+      food: "tofu"
+    },
+    {
+      name: "Krang",
+      image: "./images/krang.webp",
+      description: "Big brain.",
+      id: "9",
+      turtle: false,
+      human: false,
+      hero: false,
+      villain: true,
+      style: "wild",
+      mood: "angry",
+      food: "turtle soup"
+    },
+    {
+      name: "Baxter Stockman",
+      image: "./images/baxter.webp",
+      description: "Pretty fly (for a science guy).",
+      id: "10",
+      turtle: false,
+      human: true,
+      hero: false,
+      villain: true,
+      style: "careful",
+      mood: "angry",
+      food: "chinese"
+    },
+    {
+      name: "Slash",
+      image: "./images/slash.webp",
+      description: "(I don't know who this is...).",
+      id: "11",
+      turtle: true,
+      human: false,
+      hero: false,
+      villain: true,
+      style: "wild",
+      mood: "angry",
+      food: "pizza"
+    },
+    {
+      name: "Tokka",
+      image: "./images/tokka.webp",
+      description: "Yo, it's the green machine.",
+      id: "12",
+      turtle: true,
+      human: false,
+      hero: false,
+      villain: true,
+      style: "wild",
+      mood: "angry",
+      food: "tacos"
+    },
+    {
+      name: "Rahzar",
+      image: "./images/rahzar.webp",
+      description: "Gonna rock the town without being seen.",
+      id: "13",
+      turtle: false,
+      human: false,
+      hero: false,
+      villain: true,
+      style: "wild",
+      mood: "angry",
+      food: "chinese"
+    }
+  ]
 
   // This is where we define our original state called filteredData and our setFilter which
   // will update filteredData when called. We also define the initial state of filteredData
@@ -117,7 +236,6 @@ function Characters() {
         }
       }
     }
-    
     //Begin the nightmare filter!
     const myFilter = originalData.filter(function (character) {
       //keep track of number of times a character passes the filter. This will be used to compare against the number of boxes checked at the end.
@@ -175,9 +293,6 @@ function Characters() {
     setFilter(myFilter);
   }
 
-
-
-
   return (
     <div className="row">
       {/* This is a very silly Modal that displays a video when the DO NOT PUSH button is pressed */}
@@ -194,15 +309,15 @@ function Characters() {
       {(filteredData.map(character => {
         return (
           // This is using bootstrap's row/col layout to make the page look pretty and responsive. 
-          <div className="col-sm align-items-stretch" key={character.id}>
+          <div className="col-sm align-items-stretch" key={character.id}  style={{"paddingBottom": "2.5rem"}} >
             {/* Here we send each character information to the card component so we can display their info. */}
             {/* Notice that I am sending them as props with the keys called name, image, and description. */}
-            <Card name={character.name} image={character.image} description={character.description} />
+            <ParallaxContainer>
+              <Card name={character.name} image={character.image} description={character.description} />
+            </ParallaxContainer>
           </div>
         )
       }))}
-      {/* A nice little footer built off of a bootstrap card, made sticky-bottom */}
-      <Footer />
     </div>
   );
 }

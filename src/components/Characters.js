@@ -145,20 +145,20 @@ function Characters() {
       mood: "angry",
       food: "chinese"
     },
-    {
-      name: "Slash",
-      image: "./images/slash.webp",
-      imageBack: "./images/slash-back.webp",
-      description: "(I don't know who this is...).",
-      id: "11",
-      turtle: true,
-      human: false,
-      hero: false,
-      villain: true,
-      style: "wild",
-      mood: "angry",
-      food: "pizza"
-    },
+    // {
+    //   name: "Slash",
+    //   image: "./images/slash.webp",
+    //   imageBack: "./images/slash-back.webp",
+    //   description: "(I don't know who this is...).",
+    //   id: "11",
+    //   turtle: true,
+    //   human: false,
+    //   hero: false,
+    //   villain: true,
+    //   style: "wild",
+    //   mood: "angry",
+    //   food: "pizza"
+    // },
     {
       name: "Tokka",
       image: "./images/tokka.webp",
@@ -322,7 +322,7 @@ function Characters() {
       {(filteredData.map(character => {
         return (
           // This is using bootstrap's row/col layout to make the page look pretty and responsive. 
-          <div className="col-sm align-items-stretch" key={character.id}  style={{"paddingBottom": "2.5rem"}} >
+          <div className="col-sm align-items-stretch  d-flex justify-content-center" key={character.id}  style={{"paddingBottom": "2.5rem"}} >
             {/* Here we send each character information to the card component so we can display their info. */}
             {/* Notice that I am sending them as props with the keys called name, image, and description. */}
             <ParallaxContainer>

@@ -5,10 +5,10 @@ function NavBar(props) {
     return (
         <nav className="navbar navbar-expand-lg navbar-light">
             <a className="navbar-brand" onClick={() => props.handlePageChange('Characters')}>Home</a>
-            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            {/* <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
-            </button>
-            <div className="collapse navbar-collapse" id="navbarNav">
+            </button> */}
+            <div id="navbarNav">
                 <ul className="navbar-nav ml-auto">
                     <li className="nav-item active">
                         {/* This is the a-tag that will call the handlePageChange function back in App.js. It will send the string "Characters" as a parameter in the function.

@@ -10,7 +10,7 @@ function Searchbar(props) {
                 <input className="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"
                     onChange={props.handleSearchboxChange} type="name" />
             </div>
-            <div style={{"display":"flex"}}>
+            <div style={{"display":"flex", "flexWrap": "wrap"}}>
 
                 {/* A new section of check boxes, passing in  handleCheckboxChangNEW from Characters.js to handle the changes*/}
                 {/* Notice that each style has a class that matches its section (Style, Mood, and Food all lowercased and matching the values in the charater info) */}

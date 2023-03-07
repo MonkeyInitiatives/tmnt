@@ -1,0 +1,22 @@
+body {
+    background-color: #d8d881 !important;
+  }
+  .card{
+    background-color: #c6cb6d !important;
+  }
+  .card-header{
+    background-color: #c6cb6d !important;
+  }
+  .navbar{
+    background-color: #c6cb6d !important;
+  }
+  .form-check-input{
+    background-color: #d8d881 !important;
+  }
+  h4, p, li {
+    color: #858842 !important;
+    
+  }
+  a {
+    color: #858842 !important;
+  }

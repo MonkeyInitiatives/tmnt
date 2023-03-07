@@ -4,6 +4,7 @@ import Characters from "./components/Characters";
 import CharacterCharts from "./components/CharacterCharts";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer"
+import "./style.css"
 function App() {
   //Because I am keeping track of the currentPage state, I need to set up state, 
   //the update/setter function, and a default value of state: "Characters"

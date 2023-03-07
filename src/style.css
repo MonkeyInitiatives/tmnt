@@ -19,8 +19,18 @@ body {
   .navbar-brand{
     padding-left: 5px;
   }
-  .form-check-input{
+  /* .form-check-input{
     background-color: #d8d881 !important;
+  } */
+  input{
+    border-color: #858842 !important;
+    background-color: #d8d881 !important;
+    color: #858842 !important;
+    /* border-radius: 50px !important; */
+  } 
+  ::placeholder{
+    color: #858842 !important;
+    /* border-radius: 50px !important; */
   }
   h4, p, li {
     color: #858842 !important;

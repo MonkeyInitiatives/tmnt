@@ -8,7 +8,7 @@ function Searchbar(props) {
                 onChange part. This allows us to call that function (i.e. filter our data) every time this input box changes.
                 In other words, every time a letter is pressed the filtering happens! */}
                 <input className="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"
-                    onChange={props.handleSearchboxChange} type="name" />
+                    onChange={props.handleSearchboxChange} type="name" placeholder="Search for a character via their name here:"/>
             </div>
             <div style={{"display":"flex", "flexWrap": "wrap"}}>
 

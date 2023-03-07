@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 // Importing in my components
 import Characters from "./components/Characters";
-import CharacterProfile from "./components/CharacterProfile";
 import CharacterCharts from "./components/CharacterCharts";
-import CardFlip from "./components/CardFlip"
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer"
 function App() {
@@ -15,14 +13,8 @@ function App() {
     if (currentPage === 'Characters') {
       return <Characters />;
     }
-    if (currentPage === 'Tom') {
-      return <CharacterProfile />;
-    }
     if (currentPage === 'Charts') {
       return <CharacterCharts />;
-    }
-    if (currentPage === 'Cards') {
-      return <CardFlip />;
     }
     // Render Characters component as default.
     return <Characters />;

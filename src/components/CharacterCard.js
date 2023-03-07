@@ -29,6 +29,7 @@ function Card(props) {
                     <div className="card-body">
                         {/* Again, more use of props */}
                         <h4 className="card-title">{props.name}</h4>
+                        <p className="card-text">Tap to view info</p>
                     </div>
                 </div>
                 <div className="card h-100" style={{ width: '25rem' }} >

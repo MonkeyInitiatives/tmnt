@@ -3,7 +3,7 @@ function Footer() {
     return (
         
                 <div className="border-0 sticky-bottom" style={{ "position": "absolute", "bottom": 0, "height": "2.5rem" }}>
-                    <div className="card-header card text-center">
+                    <div className="card-header card text-center footer-text-color">
                         Made with ☕ and 🥧
                     </div>
                     <div className="card-body">

@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/tmnt/static/css/main.5afa8402.css",
-    "main.js": "/tmnt/static/js/main.28e15288.js",
+    "main.js": "/tmnt/static/js/main.0f395076.js",
     "static/media/halfshell.otf": "/tmnt/static/media/halfshell.79652393f959330e14bb.otf",
     "index.html": "/tmnt/index.html",
     "main.5afa8402.css.map": "/tmnt/static/css/main.5afa8402.css.map",
-    "main.28e15288.js.map": "/tmnt/static/js/main.28e15288.js.map"
+    "main.0f395076.js.map": "/tmnt/static/js/main.0f395076.js.map"
   },
   "entrypoints": [
     "static/css/main.5afa8402.css",
-    "static/js/main.28e15288.js"
+    "static/js/main.0f395076.js"
   ]
 }

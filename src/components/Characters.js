@@ -10,7 +10,8 @@ function Characters() {
   const originalData = [
     {
       name: "Leonardo",
-      image: "./images/leo.webp",
+      image: "./tmnt/images/leo.webp",
+      imageBack: "./tmnt/images/leo-back.webp",
       description: "Leads.",
       id: "1",
       turtle: true,
@@ -22,7 +23,8 @@ function Characters() {
     },
     {
       name: "Donatello",
-      image: "./images/dono.webp",
+      image: "./tmnt/images/dono.webp",
+      imageBack: "./tmnt/images/dono-back.webp",
       description: "Does machines.",
       id: "2",
       turtle: true,
@@ -34,7 +36,8 @@ function Characters() {
     },
     {
       name: "Raphael",
-      image: "./images/raph.webp",
+      image: "./tmnt/images/raph.webp",
+      imageBack: "./tmnt/images/raph-back.webp",
       description: "Cool, but rude.",
       id: "3",
       turtle: true,
@@ -46,7 +49,8 @@ function Characters() {
     },
     {
       name: "Michelangelo",
-      image: "./images/mike.webp",
+      image: "./tmnt/images/mike.webp",
+      imageBack: "./tmnt/images/mike-back.webp",
       description: "Party dude.",
       id: "4",
       turtle: true,
@@ -59,7 +63,8 @@ function Characters() {
     ,
     {
       name: "Shredder",
-      image: "./images/shredder.webp",
+      image: "./tmnt/images/shredder.webp",
+      imageBack: "./tmnt/images/shredder-back.webp",
       description: "The Shred Head.",
       id: "5",
       turtle: false,
@@ -72,7 +77,8 @@ function Characters() {
     },
     {
       name: "April",
-      image: "./images/april.webp",
+      image: "./tmnt/images/april.webp",
+      imageBack: "./tmnt/images/april-back.webp",
       description: "Reporter.",
       id: "6",
       turtle: false,
@@ -85,7 +91,8 @@ function Characters() {
     },
     {
       name: "Casey Jones",
-      image: "./images/casey.webp",
+      image: "./tmnt/images/casey.webp",
+      imageBack: "./tmnt/images/casey-back.webp",
       description: "Slap shot.",
       id: "7",
       turtle: false,
@@ -98,7 +105,8 @@ function Characters() {
     },
     {
       name: "Splinter",
-      image: "./images/splinter.webp",
+      image: "./tmnt/images/splinter.webp",
+      imageBack: "./tmnt/images/splinter-back.webp",
       description: "He made a funny.",
       id: "8",
       turtle: false,
@@ -111,7 +119,8 @@ function Characters() {
     },
     {
       name: "Krang",
-      image: "./images/krang.webp",
+      image: "./tmnt/images/krang.webp",
+      imageBack: "./tmnt/images/krang-back.webp",
       description: "Big brain.",
       id: "9",
       turtle: false,
@@ -124,7 +133,8 @@ function Characters() {
     },
     {
       name: "Baxter Stockman",
-      image: "./images/baxter.webp",
+      image: "./tmnt/images/baxter.webp",
+      imageBack: "./tmnt/images/baxter-back.webp",
       description: "Pretty fly (for a science guy).",
       id: "10",
       turtle: false,
@@ -137,7 +147,8 @@ function Characters() {
     },
     {
       name: "Slash",
-      image: "./images/slash.webp",
+      image: "./tmnt/images/slash.webp",
+      imageBack: "./tmnt/images/slash-back.webp",
       description: "(I don't know who this is...).",
       id: "11",
       turtle: true,
@@ -150,7 +161,8 @@ function Characters() {
     },
     {
       name: "Tokka",
-      image: "./images/tokka.webp",
+      image: "./tmnt/images/tokka.webp",
+      imageBack: "./tmnt/images/tokka-back.webp",
       description: "Yo, it's the green machine.",
       id: "12",
       turtle: true,
@@ -163,7 +175,8 @@ function Characters() {
     },
     {
       name: "Rahzar",
-      image: "./images/rahzar.webp",
+      image: "./tmnt/images/rahzar.webp",
+      imageBack: "./tmnt/images/rahzar-back.webp",
       description: "Gonna rock the town without being seen.",
       id: "13",
       turtle: false,
@@ -313,7 +326,7 @@ function Characters() {
             {/* Here we send each character information to the card component so we can display their info. */}
             {/* Notice that I am sending them as props with the keys called name, image, and description. */}
             <ParallaxContainer>
-              <Card name={character.name} image={character.image} description={character.description} />
+              <Card name={character.name} image={character.image} imageBack={character.imageBack}description={character.description} />
             </ParallaxContainer>
           </div>
         )

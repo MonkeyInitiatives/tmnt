@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/tmnt/static/css/main.8e65121e.css",
-    "main.js": "/tmnt/static/js/main.46555cfa.js",
+    "main.js": "/tmnt/static/js/main.f0e01893.js",
     "static/media/Chlorinar-WyWz.ttf": "/tmnt/static/media/Chlorinar-WyWz.bfcf163abbcdd44ca5b8.ttf",
     "static/media/halfshell.otf": "/tmnt/static/media/halfshell.79652393f959330e14bb.otf",
     "static/media/ninja.otf": "/tmnt/static/media/ninja.7bbec68b272744f2f537.otf",
     "index.html": "/tmnt/index.html",
     "main.8e65121e.css.map": "/tmnt/static/css/main.8e65121e.css.map",
-    "main.46555cfa.js.map": "/tmnt/static/js/main.46555cfa.js.map"
+    "main.f0e01893.js.map": "/tmnt/static/js/main.f0e01893.js.map"
   },
   "entrypoints": [
     "static/css/main.8e65121e.css",
-    "static/js/main.46555cfa.js"
+    "static/js/main.f0e01893.js"
   ]
 }

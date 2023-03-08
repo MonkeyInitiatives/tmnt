@@ -1,14 +1,16 @@
 {
   "files": {
-    "main.css": "/tmnt/static/css/main.6cb49c0a.css",
-    "main.js": "/tmnt/static/js/main.9bde8847.js",
+    "main.css": "/tmnt/static/css/main.8e65121e.css",
+    "main.js": "/tmnt/static/js/main.de6e2a0b.js",
+    "static/media/Chlorinar-WyWz.ttf": "/tmnt/static/media/Chlorinar-WyWz.bfcf163abbcdd44ca5b8.ttf",
+    "static/media/halfshell.otf": "/tmnt/static/media/halfshell.79652393f959330e14bb.otf",
     "static/media/ninja.otf": "/tmnt/static/media/ninja.7bbec68b272744f2f537.otf",
     "index.html": "/tmnt/index.html",
-    "main.6cb49c0a.css.map": "/tmnt/static/css/main.6cb49c0a.css.map",
-    "main.9bde8847.js.map": "/tmnt/static/js/main.9bde8847.js.map"
+    "main.8e65121e.css.map": "/tmnt/static/css/main.8e65121e.css.map",
+    "main.de6e2a0b.js.map": "/tmnt/static/js/main.de6e2a0b.js.map"
   },
   "entrypoints": [
-    "static/css/main.6cb49c0a.css",
-    "static/js/main.9bde8847.js"
+    "static/css/main.8e65121e.css",
+    "static/js/main.de6e2a0b.js"
   ]
 }

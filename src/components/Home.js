@@ -2,7 +2,7 @@ import React from 'react';
 function Home() {
     return (
         <div className="row">
-            <div className="col-sm d-flex flex-column  justify-content-center align-items-center">
+            <div className="col-sm d-flex flex-column  justify-content-center align-items-center" style={{"paddingBottom": "2.5rem"}}>
                 <h1 id="titleFont">Tom's Awesome Ninja Turtle Site!</h1>
                 <img src="https://media2.giphy.com/media/1ZbnufnHeW0W4/giphy.gif" style={{ width: "100%"}}/>
                 <p style={{"textAlign": "center"}}>This is a very fun site to demonstrate some awesome feature of React such as:</p>

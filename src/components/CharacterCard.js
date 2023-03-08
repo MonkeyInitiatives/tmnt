@@ -28,7 +28,7 @@ function Card(props) {
                     <img src={props.image} className="card-img-top" style={{ width: "100%", height: "35rem", objectFit: "cover" }} alt={props.name} />
                     <div className="card-body">
                         {/* Again, more use of props */}
-                        <h4 className="card-title">{props.name}</h4>
+                        <h3 className="card-title">{props.name}</h3>
                         <p className="card-text">Tap to view info</p>
                     </div>
                 </div>

@@ -4,11 +4,12 @@ import Characters from "./components/Characters";
 import CharacterCharts from "./components/CharacterCharts";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer"
+import Home from "./components/Home"
 import "./style.css"
 function App() {
   //Because I am keeping track of the currentPage state, I need to set up state, 
   //the update/setter function, and a default value of state: "Characters"
-  const [currentPage, setCurrentPage] = useState('Characters');
+  const [currentPage, setCurrentPage] = useState('Home');
   // The render page funciton loads at launch and renders in a component based on the state.
   const renderPage = () => {
     if (currentPage === 'Characters') {
@@ -18,7 +19,7 @@ function App() {
       return <CharacterCharts />;
     }
     // Render Characters component as default.
-    return <Characters />;
+    return <Home />;
   };
 
   const handlePageChange = (page) => setCurrentPage(page);

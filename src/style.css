@@ -1,11 +1,21 @@
 @font-face {
-  font-family: halfshell;
+  font-family: ninja;
   src: url("./ninja.otf") format("opentype");
+}
+
+@font-face {
+  font-family: titleFont;
+  src: url("./Chlorinar-WyWz.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: halfshell;
+  src: url("./halfshell.otf") format("opentype");
 }
 
 body {
   background-color: #d8d881 !important;
-  font-family: "halfshell" !important;
+  font-family: "ninja" !important;
 }
 
 input {
@@ -14,11 +24,20 @@ input {
   color: #858842 !important;
 }
 
-h4,
+input[type='checkbox']:checked,
+input[type='checkbox']:checked:after {
+  background-color: #858842 !important;
+}
+
+h3,
 p,
 li,
-a {
+a,
+.accordion-button {
   color: #858842 !important;
+}
+h3{
+  font-family: "halfshell" !important;
 }
 
 .card,
@@ -34,6 +53,32 @@ a {
 
 .navbar-brand {
   padding-left: 5px;
+}
+
+.accordion-button,
+.accordion-item {
+  background-color: #d8d881 !important;
+  border-width: 0px !important;
+}
+
+.accordion-body {
+  background-color: #c6cb6d !important;
+  border-width: 0px !important;
+}
+
+.activePage {
+  color: #858842 !important;
+}
+
+.inactivePage {
+  color: #d8d881 !important;
+}
+
+#titleFont {
+  font-family: "titleFont" !important;
+  font-size: 6em !important;
+  text-align: center;
+  color:#ce8243;
 }
 
 ::placeholder {

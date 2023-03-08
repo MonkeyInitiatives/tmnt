@@ -182,7 +182,7 @@ function CharacterCharts(props) {
         let tempArray = [];
         // For each item in our object... 
         for (let key in testDada[item]) {
-            console.log(key)
+            // console.log(key)
             const myKeys = ["turtle", "human", "hero", "villain", "style", "mood", "food"]
             // However, we don't want to push the actual true value, so only push weather, location, and lure to the temp array. 
             if (testDada[item][key] !== true && myKeys.includes(key)) {

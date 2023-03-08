@@ -203,7 +203,7 @@ function CharacterCharts(props) {
     // I found this code on StackOverflow. Basically, it creates a new array and counts the number of times something appeared in a previous array.
     // In other words, it counts all the times worms were added to goodCatchData, so you'll have something like this:
     // [["worm". 4], ["cloudy", 1], etc...]
-    
+
     // This is me being very lazy and just copying the above. Don't do this. Make a function for repeated code. 
     const finalDataBad = Array.from(
         badCatchData.reduce((r, c) => r.set(c, (r.get(c) || 0) + 1), new Map()),
@@ -213,10 +213,10 @@ function CharacterCharts(props) {
     return (
         <div className="row">
             <div className="col-xl" align="center">
-                
-                <BarChart xtitle="Character Info" data={finalDataBad} />
-                
-                <PieChart xtitle="Character Info" data={finalDataBad} donut={true} height="35vw" />
+
+                <BarChart colors={["#858842", "#c6cb6d", "#ce8243"]} data={finalDataBad} />
+
+                <PieChart data={finalDataBad} donut={true} height="35vw" />
             </div>
         </div>
     )
